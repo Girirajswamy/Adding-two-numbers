@@ -30,4 +30,3 @@ $(LIB_DIR)/%.o: $(LIB_DIR)/%.c
 # Clean rule to remove object files and executable
 clean:
 	rm -f $(OBJ) $(EXEC)
-
