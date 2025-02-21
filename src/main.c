@@ -6,5 +6,5 @@ int main(){
     scanf("%d",&a);
     printf("enter the value2\n");
     scanf("%d",&b);
-    printf("addition of %d and %d = %d",a,b,addtion(a,b));
+    printf("addition of %d and %d = %d",a,b,addition(a,b));
 }
