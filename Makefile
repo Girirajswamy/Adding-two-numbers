@@ -11,7 +11,7 @@ INCLUDE_DIR = include
 SRC = $(SRC_DIR)/main.c
 LIB = $(LIB_DIR)/addition.c
 OBJ = $(SRC:.c=.o) $(LIB:.c=.o)
-EXEC = main
+EXEC =raj
 
 # Default target to create the executable
 all: $(EXEC)
