@@ -10,22 +10,21 @@ INCLUDE_DIR = include
 # Files
 SRC = $(SRC_DIR)/main.c
 LIB = $(LIB_DIR)/addition.c
-OBJ = $(SRC:.c=.o) $(LIB:.c=.o)
+
 EXEC =raj
 
 # Default target to create the executable
 all: $(EXEC)
 
 # Rule to link object files and create the executable
-$(EXEC): $(OBJ)
-	$(CC) $(OBJ) -o $(EXEC)
+$(EXEC): $(SRC_DIR)/%.o $(LIB_DIR)/%.o
+	$(CC) $(SRC_DIR)/%.o $(LIB_DIR)/%.o -o $(EXEC)
 
 # Rule to compile source files
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/%.c -o $(SRC_DIR)/%.o
 $(LIB_DIR)/%.o: $(LIB_DIR)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $(LIB_DIR)/%.c -o $(LIB_DIR)/%.o
 
 # Clean rule to remove object files and executable
 clean:
